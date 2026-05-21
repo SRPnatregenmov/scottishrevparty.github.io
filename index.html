@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Scottish Revolutionary Party — a national regeneration movement for the Scottish working class.">
+<title>Scottish Revolutionary Party</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0f0f0f;
+  --red: #b01e1e;
+  --red-dark: #8b0000;
+  --white: #f5f2ec;
+  --off: #ede9e0;
+  --mid: #6b6660;
+  --rule: #c8c2b8;
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --sans: 'Source Sans 3', Helvetica, Arial, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+header {
+  border-bottom: 3px solid var(--black);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 100;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: stretch;
+}
+.site-name {
+  font-family: var(--serif);
+  font-size: .95rem;
+  font-weight: 700;
+  padding: .9rem 1.5rem .9rem 0;
+  text-decoration: none;
+  color: var(--black);
+  border-right: 1px solid var(--rule);
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+nav { display: flex; align-items: center; gap: 0; flex: 1; }
+nav a {
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--mid);
+  padding: .9rem .9rem;
+  transition: color .15s;
+  white-space: nowrap;
+}
+nav a:hover { color: var(--black); }
+.nav-join {
+  margin-left: auto;
+  background: var(--red) !important;
+  color: var(--white) !important;
+  padding: .45rem 1.1rem !important;
+  border-radius: 2px;
+  font-size: .75rem !important;
+  align-self: center;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: background .15s;
+}
+.nav-join:hover { background: var(--red-dark) !important; }
+
+/* MASTHEAD */
+.masthead {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.masthead-eyebrow {
+  font-family: var(--sans);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.masthead-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--red);
+}
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+}
+.masthead-sub {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #3a3632;
+  max-width: 540px;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+.btn-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .8rem 1.75rem;
+  border-radius: 2px;
+  transition: background .15s;
+}
+.btn-primary:hover { background: var(--red); }
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .8rem 1.75rem;
+  border: 1.5px solid var(--black);
+  border-radius: 2px;
+  transition: all .15s;
+}
+.btn-secondary:hover { background: var(--black); color: var(--white); }
+
+/* MAIN */
+main { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 4rem 0; border-bottom: 1px solid var(--rule); }
+section:last-child { border-bottom: none; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: var(--red);
+}
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: var(--black);
+}
+p { color: #2e2b27; margin-bottom: 1rem; font-weight: 300; }
+p:last-child { margin-bottom: 0; }
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 640px) {
+  .two-col { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* PULL QUOTE */
+blockquote {
+  border-left: 3px solid var(--red);
+  padding: .25rem 0 .25rem 1.5rem;
+  margin: 1.75rem 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #3a3632;
+  line-height: 1.7;
+}
+
+/* CONDITION GRID */
+.conditions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  margin-top: 2.5rem;
+}
+@media (max-width: 580px) { .conditions { grid-template-columns: 1fr; } }
+.condition-item {
+  padding: 1.75rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.condition-item:nth-child(2n) { border-right: none; }
+.condition-item:nth-last-child(-n+2) { border-bottom: none; }
+@media (max-width: 580px) {
+  .condition-item { border-right: none; }
+  .condition-item:last-child { border-bottom: none; }
+}
+.condition-n {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--rule);
+  margin-bottom: .6rem;
+  line-height: 1;
+}
+
+/* PROGRAMME BLOCKS */
+.programme-block {
+  border-left: 3px solid var(--red);
+  padding: 1.5rem 1.75rem;
+  background: var(--off);
+  margin-bottom: 1.25rem;
+}
+.programme-block h3 { margin-bottom: .4rem; }
+.programme-block p { font-size: .95rem; }
+
+/* DEMANDS */
+.demands-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+@media (max-width: 580px) { .demands-grid { grid-template-columns: 1fr; } }
+.demand-group {
+  border: 1px solid var(--rule);
+  padding: 1.5rem;
+}
+.demand-group-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: .75rem;
+}
+.demand-list {
+  list-style: none;
+  padding: 0;
+}
+.demand-list li {
+  font-size: .9rem;
+  color: #2e2b27;
+  font-weight: 300;
+  padding: .35rem 0;
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.5;
+}
+.demand-list li:last-child { border-bottom: none; }
+.demand-list li::before {
+  content: '—';
+  color: var(--red);
+  margin-right: .5rem;
+  font-weight: 400;
+}
+
+/* TWO-STAGE */
+.stages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (max-width: 580px) { .stages { grid-template-columns: 1fr; } }
+.stage {
+  background: var(--off);
+  padding: 2rem;
+  border-top: 3px solid var(--black);
+  position: relative;
+}
+.stage.stage-two { border-top-color: var(--red); }
+.stage-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: .75rem;
+}
+.stage h3 { font-size: 1.15rem; margin-bottom: 1rem; }
+.stage ul {
+  list-style: none;
+  padding: 0;
+}
+.stage ul li {
+  font-size: .9rem;
+  font-weight: 300;
+  color: #2e2b27;
+  padding: .3rem 0;
+  border-bottom: 1px solid var(--rule);
+  line-height: 1.5;
+}
+.stage ul li:last-child { border-bottom: none; }
+.stage ul li::before {
+  content: '→';
+  color: var(--red);
+  margin-right: .5rem;
+}
+
+/* JOIN SECTION */
+.join-wrap {
+  background: var(--black);
+  color: var(--white);
+  padding: 5rem 2rem;
+}
+.join-inner { max-width: 960px; margin: 0 auto; }
+.join-wrap .eyebrow { color: #9a8a80; }
+.join-wrap .eyebrow::before { background: #9a8a80; }
+.join-wrap h2 { color: var(--white); max-width: 520px; margin-bottom: 1rem; }
+.join-wrap p { color: #b8b0a4; max-width: 500px; }
+.join-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #2a2520;
+  border: 1px solid #2a2520;
+  margin: 2.5rem 0;
+}
+@media (max-width: 580px) { .join-boxes { grid-template-columns: 1fr; } }
+.join-box {
+  background: #1a1510;
+  padding: 1.5rem;
+}
+.join-box-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #6a6058;
+  margin-bottom: .4rem;
+}
+.join-box-text {
+  font-family: var(--serif);
+  font-size: .9rem;
+  color: #ddd5c8;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.join-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-white {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .8rem 1.75rem;
+  border-radius: 2px;
+  transition: background .15s;
+}
+.btn-white:hover { background: var(--off); }
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  color: #9a9088;
+  font-family: var(--sans);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .8rem 1.75rem;
+  border: 1.5px solid #3a3028;
+  border-radius: 2px;
+  transition: all .15s;
+}
+.btn-ghost:hover { border-color: #7a7068; color: var(--white); }
+
+/* NETWORK */
+.network-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+@media (max-width: 580px) { .network-grid { grid-template-columns: 1fr; } }
+.network-card {
+  border: 1px solid var(--rule);
+  padding: 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: border-color .15s, background .15s;
+}
+.network-card:hover { border-color: var(--black); background: var(--off); }
+.network-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  display: inline-block; margin-right: 6px; vertical-align: middle;
+}
+.network-card-label {
+  font-size: .7rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--mid); margin-bottom: .4rem;
+}
+.network-card h3 { font-size: .95rem; margin-bottom: .3rem; }
+.network-card p { font-size: .85rem; color: var(--mid); margin: 0; line-height: 1.4; }
+
+/* FOOTER */
+footer {
+  border-top: 3px solid var(--black);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer-name { font-family: var(--serif); font-size: .9rem; font-weight: 700; }
+.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-links a {
+  font-size: .75rem; font-weight: 600; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--mid); text-decoration: none;
+  transition: color .15s;
+}
+.footer-links a:hover { color: var(--black); }
+.footer-copy { font-size: .75rem; color: var(--rule); width: 100%; }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header-inner { padding: 0 1rem; }
+  .site-name { font-size: .82rem; }
+  nav a:not(.nav-join) { display: none; }
+  .masthead { padding: 3rem 1rem 2.5rem; }
+  main { padding: 0 1rem; }
+  .join-wrap { padding: 3rem 1rem; }
+  footer { padding: 1.5rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="site-name">Scottish Revolutionary Party</a>
+    <nav>
+      <a href="#analysis">Analysis</a>
+      <a href="#programme">Programme</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#network">Network</a>
+      <a href="#join" class="nav-join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<div class="masthead">
+  <div class="masthead-eyebrow">Scotland · Working Class · Socialism</div>
+  <h1>A national regeneration movement for the Scottish working class.</h1>
+  <p class="masthead-sub">Scotland produces enormous wealth. Its people see little of it. The SRP is building a disciplined political organisation to change that — through national independence, economic transformation, and working-class power.</p>
+  <div class="btn-row">
+    <a href="#join" class="btn-primary">Join the Party</a>
+    <a href="#programme" class="btn-secondary">Read our Programme</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ANALYSIS -->
+<section id="analysis">
+  <div class="eyebrow">The Situation</div>
+  <div class="two-col">
+    <div>
+      <h2>Scotland's condition</h2>
+      <p>Scotland is not a colony, but it is not an equal partner either. It is a semi-peripheral territory within a core imperial state — one whose surplus has been systematically extracted for generations, whose industrial communities were deliberately destroyed, and whose working class continues to pay the price of decisions made in its name but not in its interest.</p>
+      <p>The North Sea oil windfall generated £52.4 billion in tax revenues in six years after 1979 alone. It was used to sustain an overvalued pound and finance the destruction of manufacturing — not to rebuild the communities whose labour had powered the imperial economy. The defeat of the miners in 1984–85 broke not just a union but a class formation.</p>
+      <blockquote>The geography of Scotland's drug deaths maps onto the geography of deindustrialisation with the precision of a structural law.</blockquote>
+      <p>The 2008 financial crisis was not a banking accident but the return of a profitability crisis that financialisation had displaced without resolving. The austerity that followed was a political choice — to make workers pay for a crisis generated by finance capital. Scotland entered that conjuncture with the full weight of deindustrialisation bearing down on a working class that had never fully recovered from the defeats of the 1980s.</p>
+    </div>
+    <div>
+      <h2>The class forces</h2>
+      <p>Scotland retains one of the most concentrated patterns of land ownership in the developed world. Fewer than five hundred individuals own more than half of Scotland's private land — not a feudal survival but a functioning structure of capitalist accumulation that generates rents, captures subsidies, and exercises disproportionate political power.</p>
+      <p>The Scottish working class is defined by the extraordinary proportion employed in the state sector, by the growth of a new urban proletariat in hospitality, care, and the gig economy, and by the systematic exclusion of the most exploited workers from the organised labour movement. Union density in the Scottish private sector has collapsed to historically low levels.</p>
+      <p>The decisive mechanism of working-class discipline in contemporary Scotland is debt. The financialisation of housing has bound large sections of the working class to mortgage or rent obligations that suppress the capacity to withdraw labour, change employers, or engage in any form of economic risk-taking. It is the privatised incomes policy of the austerity era.</p>
+      <blockquote>Scotland's health disparities are among the most extreme in Western Europe — class exploitation written directly onto human bodies.</blockquote>
+    </div>
+  </div>
+
+  <div class="conditions">
+    <div class="condition-item">
+      <div class="condition-n">01</div>
+      <h3>Deindustrialisation</h3>
+      <p>The deliberate destruction of Scotland's industrial base concentrated costs on working-class communities least able to bear them. The drug deaths crisis, the health gap, the atomisation of community life — all trace back to this.</p>
+    </div>
+    <div class="condition-item">
+      <div class="condition-n">02</div>
+      <h3>Land monopoly</h3>
+      <p>The Highland Clearances were the foundational act of Scottish primitive accumulation. That process of dispossession has never been reversed. The communities cleared have not returned. The land has not been restored.</p>
+    </div>
+    <div class="condition-item">
+      <div class="condition-n">03</div>
+      <h3>Energy extraction</h3>
+      <p>Scotland possesses among the best renewable energy resources in Europe. The profits flow outward to shareholders in London, New York, and beyond. Scottish consumers pay among the highest energy prices in Europe.</p>
+    </div>
+    <div class="condition-item">
+      <div class="condition-n">04</div>
+      <h3>Political management</h3>
+      <p>Devolution was designed to absorb the demand for self-determination without threatening the structures of British capitalist power. The SNP channelled post-2008 radicalisation into a constitutional question, leaving the class question intact.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="eyebrow">Programme</div>
+  <h2>What we stand for</h2>
+  <p style="max-width:560px;margin-bottom:2.5rem">Our provisional programme sets out the strategic objectives, immediate demands, and long-term vision of the Scottish Revolutionary Party. It is grounded in Marxist-Leninist political economy and the concrete conditions of contemporary Scotland.</p>
+
+  <div class="programme-block">
+    <h3>Capital, Empire and Decline</h3>
+    <p>Our foundational theoretical text. An analysis of Scotland's position within British imperialism, the structural decline of the British state, and the specific conditions this creates for national and socialist transformation. Available now in serialised form via Scottish Vanguard.</p>
+  </div>
+  <div class="programme-block">
+    <h3>The Scottish Question and the Road to Power</h3>
+    <p>Our strategic document. Sets out the analysis of the national question in Scotland, the relationship between independence and socialist transformation, and the organisational strategy through which working-class power is to be built. Publication forthcoming.</p>
+  </div>
+  <div class="programme-block">
+    <h3>Rent Extraction in Scotland</h3>
+    <p>A materially grounded analysis of housing and rent dynamics in Scotland — how wealth is extracted from Scottish workers through rent, and the political implications for working-class organising. In development.</p>
+  </div>
+
+  <div style="margin-top:2.5rem">
+    <div class="eyebrow">Immediate demands</div>
+    <div class="demands-grid">
+      <div class="demand-group">
+        <div class="demand-group-label">Land &amp; housing</div>
+        <ul class="demand-list">
+          <li>Nationalise all land above a defined threshold</li>
+          <li>Abolish landlordism and nationalise housing</li>
+          <li>Full transparency of land ownership</li>
+          <li>Guaranteed security of tenure for all crofters</li>
+          <li>End the conversion of homes to holiday lets</li>
+        </ul>
+      </div>
+      <div class="demand-group">
+        <div class="demand-group-label">Energy &amp; economy</div>
+        <ul class="demand-list">
+          <li>Nationalise all energy generation and distribution</li>
+          <li>Scottish Sovereign Wealth Fund from energy revenues</li>
+          <li>Nationalise the banks and create a Scottish Central Bank</li>
+          <li>Workers' control of production</li>
+          <li>No compulsory redundancies in the energy transition</li>
+        </ul>
+      </div>
+      <div class="demand-group">
+        <div class="demand-group-label">Women &amp; care</div>
+        <ul class="demand-list">
+          <li>Universal free childcare from birth</li>
+          <li>Nationalise social care at living wages</li>
+          <li>Living wage without exception for all part-time workers</li>
+          <li>One year paid parental leave, shared equally</li>
+          <li>Free abortion services without referral delay</li>
+        </ul>
+      </div>
+      <div class="demand-group">
+        <div class="demand-group-label">Culture &amp; language</div>
+        <ul class="demand-list">
+          <li>Full official recognition of Scots as a distinct language</li>
+          <li>Gaelic a full official language of the Republic</li>
+          <li>Public investment in working-class cultural production</li>
+          <li>Scottish history as a core curriculum requirement</li>
+          <li>A properly funded Scottish public broadcaster</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem">
+    <a href="https://drive.google.com/file/d/1pAhJ2s8syhoJjmtHEggeBF2MpC8A5_wC/view" target="_blank" rel="noopener" class="btn-primary">Read the full programme</a>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section id="strategy">
+  <div class="eyebrow">Strategy</div>
+  <h2>The road to power</h2>
+  <p style="max-width:560px;margin-bottom:2rem">The principal contradiction in Scotland is between the Scottish proletariat and the capitalist-imperialist bloc composed of the Scottish bourgeoisie, the British state, and international monopoly capital. This cannot be resolved within the bounds of the United Kingdom or through parliamentary reform alone. The Party therefore adopts a two-stage revolutionary strategy.</p>
+
+  <div class="stages">
+    <div class="stage">
+      <div class="stage-label">Stage one</div>
+      <h3>The National-Democratic Revolution</h3>
+      <p style="font-size:.9rem;margin-bottom:1rem">Led by the working class in alliance with the rural poor, progressive intellectuals, and patriotic elements of the petite bourgeoisie.</p>
+      <ul>
+        <li>Proclaim the Scottish Republic</li>
+        <li>End British domination</li>
+        <li>Nationalise land and abolish feudal estates</li>
+        <li>Nationalise the banks and create a Scottish Central Bank</li>
+        <li>Establish a sovereign Scottish currency</li>
+        <li>Nationalise the commanding heights of the economy</li>
+        <li>Guarantee balanced regional development</li>
+        <li>Rebuild Scottish culture, language, and science</li>
+      </ul>
+    </div>
+    <div class="stage stage-two">
+      <div class="stage-label">Stage two</div>
+      <h3>The Socialist Revolution</h3>
+      <p style="font-size:.9rem;margin-bottom:1rem">The working class, organised and led by the Party, seizes full state power and establishes the Workers' Republic of Scotland.</p>
+      <ul>
+        <li>Establish workers' control of production</li>
+        <li>Rational nationalisation of the economy</li>
+        <li>Implement the First Five-Year Plan</li>
+        <li>Nationalise all housing and abolish landlordism</li>
+        <li>Socialise care, domestic labour, and community reproduction</li>
+        <li>Reconstruct agriculture through state cooperatives</li>
+        <li>Expand scientific and polytechnical education</li>
+        <li>Repudiate unjust debts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem">
+    <div class="eyebrow">Theory of transition</div>
+    <div class="two-col">
+      <div>
+        <h3>Neither electoralism nor insurrection</h3>
+        <p>The Party rejects both the parliamentary road and the insurrectionary road as currently applicable in Scotland. The working class has not yet developed the organisational density or institutional forms of dual power that would make either viable or stable.</p>
+        <p>The revolutionary road in Scotland passes through the construction of mass working-class power — organisational, economic, and political — in the period before the revolutionary crisis, and through the capacity to act decisively when that crisis matures.</p>
+      </div>
+      <div>
+        <h3>Dual power</h3>
+        <p>The strategic concept guiding the Party's theory of transition is dual power: the construction, alongside and in opposition to the existing state, of working-class institutions capable of performing the functions of governance — economic coordination, social provision, political representation, security.</p>
+        <p>The class that has built institutions of its own — that has demonstrated its capacity to run the economy and maintain social order — is a class prepared to exercise state power. The class that has not built these institutions will find the revolutionary moment passes before it is ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section id="network">
+  <div class="eyebrow">Our organisations</div>
+  <h2>The SRP network</h2>
+  <p style="max-width:520px">The Scottish Revolutionary Party operates through four bodies. Each has a distinct function within a unified political project. The Party sets the line, Scottish Vanguard spreads it, the Network organises around it.</p>
+  <div class="network-grid">
+    <a href="https://scottishrevparty.carrd.co" target="_blank" rel="noopener" class="network-card">
+      <div class="network-card-label"><span class="network-dot" style="background:#b01e1e"></span>Political</div>
+      <h3>Scottish Revolutionary Party</h3>
+      <p>Political leadership. Sets the strategic line and formal positions. Intervenes rarely and with authority.</p>
+    </a>
+    <a href="https://scottishvangmedia.carrd.co" target="_blank" rel="noopener" class="network-card">
+      <div class="network-card-label"><span class="network-dot" style="background:#333"></span>Media</div>
+      <h3>Scottish Vanguard</h3>
+      <p>Analysis, reports, and political education. Carries all content the Party endorses.</p>
+    </a>
+    <a href="https://scottishwn.carrd.co" target="_blank" rel="noopener" class="network-card">
+      <div class="network-card-label"><span class="network-dot" style="background:#2e7d32"></span>Organising</div>
+      <h3>Scottish Workers Network</h3>
+      <p>Reading groups, events, and workplace activity. The primary entry point into active involvement.</p>
+    </a>
+    <a href="https://www.instagram.com/nat_solid" target="_blank" rel="noopener" class="network-card">
+      <div class="network-card-label"><span class="network-dot" style="background:#1a3a6a"></span>Welfare</div>
+      <h3>National Solidarity</h3>
+      <p>Housing, cost-of-living, and community support. The base of the dual power project.</p>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- JOIN -->
+<div class="join-wrap" id="join">
+  <div class="join-inner">
+    <div class="eyebrow">Membership</div>
+    <h2>Get involved</h2>
+    <p>We are not looking for enthusiasm. We are looking for people who demonstrate consistency over time — who attend, contribute, follow through, and are capable of sustained political work. The conversation will be direct, unhurried, and without pressure.</p>
+
+    <div class="join-boxes">
+      <div class="join-box">
+        <div class="join-box-label">Entry point</div>
+        <div class="join-box-text">Join the Scottish Workers Network. Attend a reading group or event. Get to know the organisation through practical participation before any further commitment is discussed.</div>
+      </div>
+      <div class="join-box">
+        <div class="join-box-label">The conversation</div>
+        <div class="join-box-text">After initial engagement, a one-to-one political conversation. We are assessing fit as much as you are. No recruitment pressure. Political alignment clarifies through engagement, not in advance of it.</div>
+      </div>
+      <div class="join-box">
+        <div class="join-box-label">What we offer</div>
+        <div class="join-box-text">Political education, collective analysis, practical organising experience, and a serious organisation committed to long-term development of a real working-class force in Scotland.</div>
+      </div>
+      <div class="join-box">
+        <div class="join-box-label">What we ask</div>
+        <div class="join-box-text">Reliability. Consistency. The capacity to sustain political work over time alongside real-life commitments. We build slowly and durably — not through sudden conversions.</div>
+      </div>
+    </div>
+
+    <div class="join-actions">
+      <a href="https://tally.so/r/LZvXdp" target="_blank" rel="noopener" class="btn-white">Register your interest</a>
+      <a href="https://scottishwn.carrd.co" target="_blank" rel="noopener" class="btn-ghost">Scottish Workers Network</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Scottish Revolutionary Party</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/scottishrevparty" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://substack.com/@scottishvang" target="_blank" rel="noopener">Substack</a>
+    <a href="https://scottishwn.carrd.co" target="_blank" rel="noopener">SWN</a>
+    <a href="https://scottishvangmedia.carrd.co" target="_blank" rel="noopener">Scottish Vanguard</a>
+  </div>
+  <span class="footer-copy">© 2026 Scottish Revolutionary Party. Promoted by the Scottish Revolutionary Party.</span>
+</footer>
+
+</body>
+</html>
